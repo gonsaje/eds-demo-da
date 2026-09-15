@@ -59,12 +59,15 @@ function buildBrand(section) {
 }
 
 /**
- * Builds a flat list from every authored link after the brand section.
+ * Builds a flat list from every authored link except the brand link.
  * @param {HTMLElement[]} sections Authored navigation sections
+ * @param {HTMLAnchorElement} brandLink Link used for the brand
  * @returns {HTMLDivElement|null} Navigation menu
  */
-function buildMenu(sections) {
-  const links = sections.flatMap((section) => [...section.querySelectorAll('a[href]')]);
+function buildMenu(sections, brandLink) {
+  const links = sections
+    .flatMap((section) => [...section.querySelectorAll('a[href]')])
+    .filter((link) => link !== brandLink);
   if (!links.length) return null;
 
   const menu = document.createElement('div');
@@ -138,9 +141,11 @@ export default async function decorate(block) {
   nav.className = 'nav';
   nav.id = 'nav';
   nav.setAttribute('aria-label', 'Primary navigation');
-  nav.append(buildBrand(sections[0]));
+  const brandSection = sections[0];
+  const brandLink = brandSection?.querySelector('a[href]');
+  nav.append(buildBrand(brandSection));
 
-  const menu = buildMenu(sections.slice(1));
+  const menu = buildMenu(sections, brandLink);
   if (menu) {
     nav.append(buildMenuToggle(nav, menu), menu);
   }

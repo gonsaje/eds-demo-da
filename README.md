@@ -43,12 +43,15 @@ npm run lint
 
 ## Navigation authoring
 
-Create a root-level DA document named `nav` with two sections:
+Create a root-level DA document named `nav`:
 
-1. Add the logo or site name in the first section and link it to `/`. A linked
+1. Add the logo or site name first and link it to `/`. A linked
    image, linked text, or both are supported.
-2. Add any number of links in the second section. Each link becomes a flat
+2. Add any number of links after the brand. Each link becomes a flat
    navigation item, whether it is authored in a list or as regular text.
+
+A section break between the brand and links is optional; both one-section and
+multi-section documents are supported.
 
 Preview the `nav` document separately after changing it. If the document is
 missing or incomplete, the header safely falls back to an `EDS Demo` home link.
