@@ -57,6 +57,21 @@ in the rendered header and uses its alt text as the accessible brand name.
 Preview the `nav` document separately after changing it. If the document is
 missing or incomplete, the header safely falls back to an `EDS Demo` home link.
 
+## Teaser authoring
+
+Use a `Teaser` block table with one teaser per row. Put the image in the first
+cell and the teaser content in the second cell. Content can include an eyebrow,
+a linked heading, description, tags, and date; omitted fields are supported.
+
+Configure the block with an orientation and a column-count variant:
+
+- `Teaser (horizontal, 1-up)` for full-width media/content rows.
+- `Teaser (vertical, 2-up)`, `Teaser (vertical, 3-up)`, or
+  `Teaser (vertical, 4-up)` for card grids.
+
+Both orientations support `1-up` through `4-up`. Multi-column layouts collapse
+to two columns on tablets and one column on phones.
+
 ## Local development
 
 1. Install the [AEM CLI](https://github.com/adobe/helix-cli): `npm install -g @adobe/aem-cli`.
