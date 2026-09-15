@@ -41,6 +41,18 @@ npm i
 npm run lint
 ```
 
+## Navigation authoring
+
+Create a root-level DA document named `nav` with two sections:
+
+1. Add the logo or site name in the first section and link it to `/`. A linked
+   image, linked text, or both are supported.
+2. Add any number of links in the second section. Each link becomes a flat
+   navigation item, whether it is authored in a list or as regular text.
+
+Preview the `nav` document separately after changing it. If the document is
+missing or incomplete, the header safely falls back to an `EDS Demo` home link.
+
 ## Local development
 
 1. Install the [AEM CLI](https://github.com/adobe/helix-cli): `npm install -g @adobe/aem-cli`.
