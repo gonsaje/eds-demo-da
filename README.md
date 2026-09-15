@@ -51,7 +51,8 @@ Create a root-level DA document named `nav`:
    navigation item, whether it is authored in a list or as regular text.
 
 A section break between the brand and links is optional; both one-section and
-multi-section documents are supported.
+multi-section documents are supported. An image-only logo remains image-only
+in the rendered header and uses its alt text as the accessible brand name.
 
 Preview the `nav` document separately after changing it. If the document is
 missing or incomplete, the header safely falls back to an `EDS Demo` home link.

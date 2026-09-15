@@ -41,17 +41,16 @@ function buildBrand(section) {
   if (picture) brand.append(picture.cloneNode(true));
   if (image) brand.append(image.cloneNode(true));
 
-  const label = authoredLink?.textContent.trim()
-    || section?.textContent.trim()
-    || 'EDS Demo';
-  if (label) {
+  const authoredLabel = authoredLink?.textContent.trim();
+  const logo = brand.querySelector('img');
+  const label = authoredLabel || logo?.alt.trim() || 'EDS Demo';
+  if (authoredLabel || !logo) {
     const name = document.createElement('span');
     name.className = 'nav-brand-name';
     name.textContent = label;
     brand.append(name);
   }
 
-  const logo = brand.querySelector('img');
   if (logo) logo.classList.add('nav-logo');
   brand.setAttribute('aria-label', `${label} home`);
   normalizeProjectLink(brand);
