@@ -72,6 +72,18 @@ Configure the block with an orientation and a column-count variant:
 Both orientations support `1-up` through `4-up`. Multi-column layouts collapse
 to two columns on tablets and one column on phones.
 
+Fine-tune the teaser surface by adding any of these variants to the block name:
+
+- Radius: `radius-small`, `radius-medium`, or `radius-large`.
+- Background: `bg-white`, `bg-light`, `bg-dark`, or `bg-blue`.
+- Text: `text-dark`, `text-light`, or `text-blue`.
+- Drop shadow: `shadow-small`, `shadow-medium`, or `shadow-large`.
+- Border: `no-border` removes the default border.
+
+Variants can be combined, for example:
+`Teaser (vertical, 3-up, radius-large, bg-light, text-dark, shadow-medium)`.
+The shorter `rounded` and `shadow` variants select the medium presets.
+
 ## Local development
 
 1. Install the [AEM CLI](https://github.com/adobe/helix-cli): `npm install -g @adobe/aem-cli`.
